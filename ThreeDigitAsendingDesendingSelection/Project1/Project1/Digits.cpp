@@ -1,10 +1,11 @@
 /*
 
-Pranathi, Cameron, Elena - 10/5/17
+Vineel Gajjala - 10/16/17
 
-Assignment Name : Three Digit Ascend Descend Selection
+Assignment Name : Three Digit Ascending Descending Loop
 
 storing three variables, print out ascending or descending based on if > or < than previous digit
+And then looping that code 30 times
 
 */
 
@@ -34,23 +35,25 @@ void pause() {
 // MAIN
 
 void main() {
-	int calc_1, var1, var2, var3;
-	cout << "Enter a three digit number" << endl;
-	cin >> calc_1;
-	var1 = calc_1 % 10; // far right
-	var2 = (calc_1 / 10) % 10; // middle
-	var3 = (calc_1 / 100) % 100; // far left
 
-	if ((var1 > var2) && (var2 > var3)) {
-		cout << "ascending" << endl;
-	}
+	for (int i = 0; i < 30; i++) {
+		int Three_Int, Int_One, Int_Two, Int_Three;
+		cout << "Enter a three digit number" << endl;
+		cin >> Three_Int;
+		Int_One = Three_Int % 10; // far right
+		Int_Two = (Three_Int / 10) % 10; // middle
+		Int_Three = (Three_Int / 100) % 100; // far left
 
-	else if ((var3 > var2) && (var2 > var1)) {
-		cout << "descending" << endl;
-	}
-	else {
-		cout << "neither" << endl;
-	}
+		if ((Int_One > Int_Two) && (Int_Two > Int_Three)) {
+			cout << "Ascending" << endl;
+		}
 
+		else if ((Int_Three > Int_Two) && (Int_Two > Int_One)) {
+			cout << "Descending" << endl;
+		}
+		else {
+			cout << "Neither" << endl;
+		}
+	}
 	pause(); // pauses to see the displayed text
 }
